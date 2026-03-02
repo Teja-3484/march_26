@@ -1,0 +1,15 @@
+class Solution:
+    def distributeCandies(self, candyType: List[int]) -> int:
+        n=len(candyType)
+        d={}
+        for i in candyType:
+            if i not in d:
+                d[i]=1
+            else:
+                d[i]+=1
+        c=0
+        for k in d:
+            c+=1
+        if c<n//2:
+            return c
+        return n//2
