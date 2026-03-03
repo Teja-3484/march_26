@@ -1,0 +1,12 @@
+class Solution:
+    def findKthBit(self, n: int, k: int) -> str:
+        f=0
+        while n>1:
+            length=1<<(n-1)
+            if k==length:
+                return str(1^f)
+            elif k>length:
+                k=(length<<1)-k
+                f^=1
+            n-=1
+        return str(f)
