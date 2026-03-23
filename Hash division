@@ -1,0 +1,9 @@
+class Solution:
+    def stringHash(self, s: str, k: int) -> str:
+        res=""
+        for i in range(0,len(s),k):
+            c=0
+            for j in range(i,i+k):
+                c+=ord(s[j])-ord('a')
+            res+=chr((c%26)+ord('a'))
+        return res
